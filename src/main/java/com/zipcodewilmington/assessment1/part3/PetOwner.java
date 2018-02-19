@@ -15,17 +15,13 @@ public class PetOwner {
      */
     public PetOwner(String name, Pet... pets) {
         this.name = name;
-//        Pet[] petArray = new Pet[pets.length];
-//        int index = 0;
-//        for (Pet pet : pets){
-//            petArray[index] = pet;
-//            index++;
-//        }
-//        this.pets = petArray;
         if (pets == null){
             this.pets = new Pet[0];
         } else {
             this.pets = pets;
+            for (Pet onePet:this.pets) {
+                onePet.owner = this;
+            }
         }
     }
 
@@ -43,6 +39,9 @@ public class PetOwner {
             newPetArray[i] = petList.get(i);
         }
         this.pets = newPetArray;
+        for (Pet onePet:this.pets) {
+            onePet.owner = this;
+        }
     }
 
     /**
