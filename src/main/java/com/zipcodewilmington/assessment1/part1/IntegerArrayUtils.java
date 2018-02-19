@@ -9,7 +9,11 @@ public class IntegerArrayUtils {
      * @return the sum of `intArray`
      */
     public static Integer getSum(Integer[] intArray) {
-        return null;
+        int answer = 0;
+        for (Integer number : intArray){
+            answer += number;
+        }
+        return answer;
     }
 
     /**
@@ -17,7 +21,11 @@ public class IntegerArrayUtils {
      * @return the product of `intArray`
      */
     public static Integer getProduct(Integer[] intArray) {
-        return null;
+        int answer = 1;
+        for (Integer number : intArray){
+            answer *= number;
+        }
+        return answer;
     }
 
     /**
@@ -25,6 +33,10 @@ public class IntegerArrayUtils {
      * @return the sum of `intArray` divided by number of elements in `intArray`
      */
     public static Double getAverage(Integer[] intArray) {
-        return null;
+        Double answer = 0.0;
+        for (Integer number : intArray){
+            answer += number;
+        }
+        return answer/intArray.length;
     }
 }

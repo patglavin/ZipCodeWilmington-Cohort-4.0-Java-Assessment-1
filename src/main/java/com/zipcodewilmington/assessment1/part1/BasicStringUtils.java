@@ -9,7 +9,7 @@ public class BasicStringUtils {
      * @return string with identical content, and the first character capitalized
      */
     public static String camelCase(String str) {
-        return null;
+        return (str.substring(0,1).toUpperCase() + str.substring(1, str.length()));
     }
 
     /**
@@ -17,7 +17,12 @@ public class BasicStringUtils {
      * @return string with identical contents, in the reverse order
      */
     public static String reverse(String str) {
-        return null;
+        StringBuilder reversed = new StringBuilder();
+        String[] characters = str.split("");
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversed.append(characters[i]);
+        }
+        return reversed.toString();
     }
 
     /**
@@ -25,7 +30,12 @@ public class BasicStringUtils {
      * @return string with identical contents, in reverse order, with first character capitalized
      */
     public static String reverseThenCamelCase(String str) {
-        return null;
+        StringBuilder reversed = new StringBuilder();
+        String[] characters = str.split("");
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversed.append(characters[i]);
+        }
+        return (reversed.toString().substring(0, 1).toUpperCase() + reversed.toString().substring(1, reversed.length()));
     }
 
 
@@ -34,7 +44,7 @@ public class BasicStringUtils {
      * @return string with identical contents excluding first and last character
      */
     public static String removeFirstAndLastCharacter(String str) {
-        return null;
+        return str.substring(1, str.length()-1);
     }
 
     /**
@@ -42,6 +52,15 @@ public class BasicStringUtils {
      * @return string with identical characters, each with opposite casing
      */
     public static String invertCasing(String str) {
-        return null;
+        StringBuilder flippedCase = new StringBuilder();
+        String[] preFlipped = str.split("");
+        for (String character:preFlipped) {
+            if (character.equals(character.toUpperCase())){
+                flippedCase.append(character.toLowerCase());
+            } else {
+                flippedCase.append(character.toUpperCase());
+            }
+        }
+        return flippedCase.toString();
     }
 }

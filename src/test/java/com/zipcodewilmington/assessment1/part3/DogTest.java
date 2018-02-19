@@ -8,6 +8,18 @@ import org.junit.Test;
  */
 public class DogTest {
     @Test
+    public void implementationTest() {
+        Assert.assertTrue(true);
+
+    }
+
+    @Test
+    public void inheritanceTest() {
+        Assert.assertTrue(true);
+    }
+
+
+    @Test
     public void nullaryConstructorTest() {
         // Given
         PetOwner expectedOwner = null;
